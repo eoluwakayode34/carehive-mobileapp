@@ -13,6 +13,7 @@ export default function OnboardScreen({navigation}) {
     <View style={styles.textContainer}>
 
       <BaseText  >Become a consultant and schedule appointments with patients instantly  </BaseText>
+      <BaseText  >Become a consultant and schedule appointments with patients instantly  </BaseText>
     </View>
 
 
