@@ -23,7 +23,7 @@ export default function WelcomeScreen({navigation}) {
 
         <SocialMediaButton onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={google} color='#DD4B39'>
         Sign up with Google </SocialMediaButton>
-        <SocialMediaButton  n onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={apple} color='#000'>
+        <SocialMediaButton  onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={apple} color='#000'>
         Sign up with Apple
             </SocialMediaButton>
             </View>
@@ -33,7 +33,7 @@ export default function WelcomeScreen({navigation}) {
       <View style={styles.getStarted}>
       <BaseText fontSize={14} >
       Don’t have an account?     </BaseText>
-      <LinkText fontSize={14}>Sign Up </LinkText>
+      <LinkText fontSize={14} onPress={() => alert('hello')}>Sign Up </LinkText>
 
       </View>
       </View>

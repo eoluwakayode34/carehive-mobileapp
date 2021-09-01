@@ -18,7 +18,7 @@ export default function OnboardScreen({navigation}) {
 
       <View style={styles.getStarted}>
 
-      <Button onPress={() =>navigation.navigate({ routeName: 'Welcome',  key: 'Onboard' })}>Get Started</Button>
+      <Button onPress={() =>navigation.navigate('Welcome')}>Get Started</Button>
       </View>
       </View>
       </ImageBackground>
