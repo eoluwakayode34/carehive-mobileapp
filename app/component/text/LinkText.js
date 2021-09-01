@@ -9,7 +9,7 @@ import {
  
 } from '@expo-google-fonts/josefin-sans';
 
-const LinkText = ({children, fontSize = 14}) => {
+const LinkText = ({children, fontSize = 18}) => {
 
 
   let [fontsLoaded] = useFonts({
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         letterSpacing: 1.3,     // Note the quoting of the value for `fontFamily` here; it expects a string!
         fontFamily: 'JosefinSans_400Regular',
         color: '#0E69BD',
-        lineHeight: '120%',
+        lineHeight: 1.7,
         flexWrap: 'wrap',
         margin: 0,
         textAlign: 'center',

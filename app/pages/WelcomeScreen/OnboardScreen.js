@@ -3,7 +3,7 @@ import { StyleSheet, Image, SafeAreaView, StatusBar, Platform, View, ImageBackgr
 import BaseText from './../../component/text/BaseText';
 import Button from '../../../app/component/button/Button'
 import onBoard from '../../../assets/onboardScrn.png'
-export default function OnboardScreen() {
+export default function OnboardScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={onBoard} style={styles.image}>
@@ -18,7 +18,7 @@ export default function OnboardScreen() {
 
       <View style={styles.getStarted}>
 
-      <Button>Get Started</Button>
+      <Button onPress={() =>navigation.navigate({ routeName: 'Welcome',  key: 'Onboard' })}>Get Started</Button>
       </View>
       </View>
       </ImageBackground>

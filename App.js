@@ -3,14 +3,24 @@ import { StyleSheet, Image, SafeAreaView, StatusBar, Platform, View, ImageBackgr
 import BaseText from './app/component/text/BaseText';
 import Button from './app/component/button/Button'
 import onBoard from './assets/onboardScrn.png'
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnboardScreen from './app/pages/WelcomeScreen/OnboardScreen'
 import RegisterScreen from './app/pages/WelcomeScreen/RegisterScreen'
+import WelcomeScreen from './app/pages/WelcomeScreen/WelcomeScreen'
+
+
+const Stack = createNativeStackNavigator();
+
 export default function App() {
+  
   return (
-    < >
-      <RegisterScreen/>
-    </>
+    <NavigationContainer >
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen   name='Onboard' component={OnboardScreen} />
+        <Stack.Screen  name='Welcome'  component={WelcomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

@@ -7,7 +7,7 @@ import Scrn from '../../../assets/Scrn.png'
 import google from '../../../assets/google.png'
 import apple from '../../../assets/apple.png'
 import LinkText from '../../component/text/LinkText';
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={Scrn} style={styles.image}>
@@ -15,16 +15,19 @@ export default function WelcomeScreen() {
       <View style={styles.content}>
 
     <View style={styles.textContainer}>
-      <HeadingText>Welcome Back</HeadingText>
-      <BaseText  >Become a consultant and schedule appointments with patients instantly  </BaseText>
+      <HeadingText >Welcome Back</HeadingText>
     </View>
 
        
-        <SocialMediaButton imageSource={google} color='#DD4B39'>
+       <View style={{width: '100%' , paddingBottom: '8rem', paddingHorizontal: '1rem'}}>
+
+        <SocialMediaButton onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={google} color='#DD4B39'>
         Sign up with Google </SocialMediaButton>
-        <SocialMediaButton imageSource={apple} color='#000'>
+        <SocialMediaButton  n onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={apple} color='#000'>
         Sign up with Apple
             </SocialMediaButton>
+            </View>
+
         
 
       <View style={styles.getStarted}>
@@ -49,8 +52,12 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    paddingBottom: '14rem',
+    paddingBottom: '7rem',
     paddingVertical: '3rem',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    width: '100%'
+
     
   },
   getStarted: {
@@ -71,8 +78,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: '1rem',
     // backgroundColor: 'red',
-    paddingVertical: '3rem',
-    paddingTop: '5rem',
+    paddingBottom: '3rem',
+    paddingTop: '1rem',
     justifyContent: 'flex-end'
   }
   

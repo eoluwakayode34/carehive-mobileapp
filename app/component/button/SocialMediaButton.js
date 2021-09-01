@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import google from '../../../assets/google.png'
 import {
     useFonts,
     
@@ -8,7 +9,7 @@ import {
    
   } from '@expo-google-fonts/josefin-sans';
 
-const PrimaryButton = ({children, color, imageSource, ...otherProps}) => {
+const SocialMediaButton = ({children, color, onPress, textColor  = '#000', imageSource, ...otherProps}) => {
     let [fontsLoaded] = useFonts({
  
         JosefinSans_400Regular
@@ -21,10 +22,10 @@ const PrimaryButton = ({children, color, imageSource, ...otherProps}) => {
         return <Text>laoding...</Text>;
       } else {
     return (
-       <TouchableOpacity   style={[{backgroundColor: color}, styles.button]}>
+       <TouchableOpacity  onPress={onPress}  style={[{backgroundColor: color}, styles.button]}>
 
-                <Image source={imageSource} />
-              <Text  style={styles.text}>
+                <Image source={imageSource} style={styles.image} />
+              <Text  style={[{color: textColor},styles.text]}>
               {children}
               </Text>
            
@@ -37,7 +38,7 @@ const PrimaryButton = ({children, color, imageSource, ...otherProps}) => {
 
 
 
-export default PrimaryButton
+export default SocialMediaButton
 
 
 
@@ -45,26 +46,33 @@ const styles = StyleSheet.create({
     button: {
         width: '100%',
         padding: '1rem',
-        backgroundColor: 'white',
-        paddingHorizontal: '2rem',
-        shadowColor : 'black',
-        shadowOffset :   {width: 0, height: 0},
-        shadowRadius: 5,
-        shadowOpacity: .4,
-        borderRadius: '20px',
-        borderColor: '#5ED2EC',
-        borderWidth: '2px'
+      
+        justifyContent: 'center',
+        borderRadius: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: '.3rem'
+
+
+       
       },
       text: {
-        fontSize: 20,
+        fontSize: 16,
         letterSpacing: 1.3,     // Note the quoting of the value for `fontFamily` here; it expects a string!
         fontFamily: 'JosefinSans_400Regular',
-        color: '#000',
-        fontWeight: 600,
+      
+        fontWeight: 'normal',
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center'
 
+      },
+      image: {
+          resizeMode: 'contain',
+          width: 20,
+           height: 20,  
+            marginRight: '1rem'          
       }
   });
   

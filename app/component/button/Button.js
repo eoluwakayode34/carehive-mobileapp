@@ -8,7 +8,7 @@ import {
    
   } from '@expo-google-fonts/josefin-sans';
 
-const PrimaryButton = ({children, ...otherProps}) => {
+const PrimaryButton = ({children, onPress, ...otherProps}) => {
     let [fontsLoaded] = useFonts({
  
         JosefinSans_400Regular
@@ -21,7 +21,7 @@ const PrimaryButton = ({children, ...otherProps}) => {
         return <Text>laoding...</Text>;
       } else {
     return (
-       <TouchableOpacity   style={styles.button}>
+       <TouchableOpacity onPress={onPress}  style={styles.button}>
       
               <Text  style={styles.text}>
               {children}
@@ -50,16 +50,16 @@ const styles = StyleSheet.create({
         shadowOffset :   {width: 0, height: 0},
         shadowRadius: 5,
         shadowOpacity: .4,
-        borderRadius: '20px',
+        borderRadius: 20,
         borderColor: '#5ED2EC',
-        borderWidth: '2px'
+        borderWidth: 2
       },
       text: {
         fontSize: 20,
         letterSpacing: 1.3,     // Note the quoting of the value for `fontFamily` here; it expects a string!
         fontFamily: 'JosefinSans_400Regular',
         color: '#000',
-        fontWeight: 600,
+        fontWeight: "600",
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center'

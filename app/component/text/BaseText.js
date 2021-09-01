@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         letterSpacing: 1.3,     // Note the quoting of the value for `fontFamily` here; it expects a string!
         fontFamily: 'JosefinSans_400Regular',
         color: '#676767',
-        lineHeight: '120%',
+        lineHeight: 1,
         flexWrap: 'wrap',
         margin: 0,
         textAlign: 'center',

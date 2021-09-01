@@ -42,13 +42,11 @@ const styles = StyleSheet.create({
         letterSpacing: .5,     // Note the quoting of the value for `fontFamily` here; it expects a string!
         fontFamily: 'JosefinSans_400Regular',
         color: '#000',
-        // lineHeight: '120%',
         flexWrap: 'wrap',
         margin: 0,
-        fontWeight: 600,
+        fontWeight: '600',
         textAlign: 'left',
-        justifyContent: 'center',
-        alignItems: 'center',
+        
         paddingHorizontal: '1rem'
       }
   });
