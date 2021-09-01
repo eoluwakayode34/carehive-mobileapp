@@ -3,9 +3,10 @@ import { StyleSheet, Image, SafeAreaView, StatusBar, Platform, View, ImageBackgr
 import BaseText from './../../component/text/BaseText';
 import HeadingText from './../../component/text/HeadingText';
 import Button from '../../../app/component/button/Button'
+import SocialMediaButton from '../../../app/component/button/SocialMediaButton'
 import Scrn from '../../../assets/Scrn.png'
 import LinkText from '../../component/text/LinkText';
-export default function App() {
+export default function RegisterScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={Scrn} style={styles.image}>
@@ -16,6 +17,16 @@ export default function App() {
       <HeadingText>Create Account</HeadingText>
       <BaseText  >Become a consultant and schedule appointments with patients instantly  </BaseText>
     </View>
+
+    <View style={{width: '100%' , paddingBottom: '8rem', paddingHorizontal: '1rem'}}>
+
+<SocialMediaButton key='on' onPress={() =>navigation.navigate('Onboard')}  textColor='white' imageSource={google} color='#DD4B39'>
+Sign up with Google </SocialMediaButton>
+<SocialMediaButton key='' onPress={() =>navigation.goBack()}  textColor='white' imageSource={apple} color='#000'>
+Sign up with Apple
+    </SocialMediaButton>
+    </View>
+
 
 
       <View style={styles.getStarted}>
