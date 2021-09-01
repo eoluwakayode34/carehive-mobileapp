@@ -1,16 +1,28 @@
 import React from 'react';
 import { StyleSheet, Image, SafeAreaView, StatusBar, Platform, View, ImageBackground } from 'react-native';
-import BaseText from './app/component/text/BaseText';
-import Button from './app/component/button/Button'
-import onBoard from './assets/onboardScrn.png'
-
-import OnboardScreen from './app/pages/WelcomeScreen/OnboardScreen'
-import RegisterScreen from './app/pages/WelcomeScreen/RegisterScreen'
-export default function App() {
+import BaseText from './../../component/text/BaseText';
+import Button from '../../../app/component/button/Button'
+import onBoard from '../../../assets/onboardScrn.png'
+export default function OnboardScreen() {
   return (
-    < >
-      <RegisterScreen/>
-    </>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground source={onBoard} style={styles.image}>
+
+      <View style={styles.content}>
+
+    <View style={styles.textContainer}>
+
+      <BaseText  >Become a consultant and schedule appointments with patients instantly  </BaseText>
+    </View>
+
+
+      <View style={styles.getStarted}>
+
+      <Button>Get Started</Button>
+      </View>
+      </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 }
 
